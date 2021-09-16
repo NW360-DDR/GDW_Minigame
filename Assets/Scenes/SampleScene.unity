@@ -382,7 +382,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 597076605}
-  - component: {fileID: 597076604}
   - component: {fileID: 597076603}
   m_Layer: 0
   m_Name: RandomBullets
@@ -403,20 +402,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5822f9239a81ab644a710c3c7b33f1e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Prefab: {fileID: 0}
---- !u!114 &597076604
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 597076602}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5822f9239a81ab644a710c3c7b33f1e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Prefab: {fileID: 0}
+  Prefab: {fileID: 2760523544646668731, guid: 785b829b51218ef47ba93e9a5f0537e2, type: 3}
+  Repeat: 0.25
 --- !u!4 &597076605
 Transform:
   m_ObjectHideFlags: 0

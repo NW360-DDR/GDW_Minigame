@@ -7,7 +7,7 @@ public class BulletGen : MonoBehaviour
 
     public GameObject Prefab;
     private float Delay = 1.0f;
-    private float Repeat = 1.0f;
+    public float Repeat = 0.25f;
     // Start is called before the first frame update
     void Start()
     {
