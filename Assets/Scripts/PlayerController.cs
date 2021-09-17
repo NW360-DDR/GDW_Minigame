@@ -5,14 +5,17 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     // Initialize player speed.
-    public float PlayerSpeed = 10f;
+    private float PlayerSpeed = 5.0f;
     // Initialize bullet speed and var for how long it's been since we shot a bullet. Also the reference for the prefab.
-    public float BulletRate = 0.25f;
-    public float Cooldown;
+    private float BulletRate = 0.25f;
+    private float Cooldown;
     public GameObject BulletPrefab;
     // These are needed for movement.
     float XInput;
     float YInput;
+    //These are needed for limiting player movement.
+    public float XLim = 4.5f;
+    public float ZLim = 4.5f;
     
     // This is to access the TextUpdate script.
     private TextUpdate UI;
@@ -34,6 +37,7 @@ public class PlayerController : MonoBehaviour
         XInput = Input.GetAxis("Horizontal");
         YInput = Input.GetAxis("Vertical");
         transform.Translate(new Vector3(XInput, 0, YInput) * Time.deltaTime * PlayerSpeed);
+        CheckLocation();
         // Increments the cooldown, done before the bullet check just in case.
         Cooldown += Time.deltaTime;
 
@@ -42,6 +46,28 @@ public class PlayerController : MonoBehaviour
         {
             Instantiate(BulletPrefab, transform.position, BulletPrefab.transform.rotation);
             Cooldown = 0.0f;
+        }
+    }
+
+    private void CheckLocation()
+    {
+        // Checks our X position to make sure it's all good.
+        if (transform.position.x > XLim)
+        {
+            transform.position = new Vector3(XLim, transform.position.y, transform.position.z);
+        }
+        else if (transform.position.x < -XLim)
+        {
+            transform.position = new Vector3(-XLim, transform.position.y, transform.position.z);
+        }
+        // Then checks our Z position to make sure that's all good too.
+        if (transform.position.z > XLim)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, ZLim);
+        }
+        else if (transform.position.z < -ZLim)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, -ZLim);
         }
     }
 }
