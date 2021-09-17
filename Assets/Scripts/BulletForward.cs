@@ -6,13 +6,7 @@ public class BulletForward : MonoBehaviour
 {
 
     private float BulletSpeed = 5.0f;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    // Bullet Goes Forward. advanced shit, I know.
     void Update()
     {
         transform.Translate(Vector3.forward * Time.deltaTime * BulletSpeed);

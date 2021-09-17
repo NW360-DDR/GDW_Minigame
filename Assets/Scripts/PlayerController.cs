@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     {
         // Actually nabs the specific object script and writes a test value to the difficulty.
         UI = GameObject.FindObjectOfType<TextUpdate>();
-        UI.Write("Diff","LUNATIC");
+        UI.Write("Phase","PHASE 1");
         // Properly starts up the Cooldown.
         Cooldown = BulletRate;
     }

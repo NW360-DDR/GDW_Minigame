@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - UI
+  - Boss
+  - PlayerBullet
+  - Add
   layers:
   - Default
   - TransparentFX
