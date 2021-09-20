@@ -3,16 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BossHealthScript : MonoBehaviour
+public class BossHealth: MonoBehaviour
 {
     // Array of boss health phases. Good for making multiple parts of a boss fight.
     public int[] HP;
     public Slider HealthBar;
     // Variable to keep track of the current phase.
     public int Phase = 0;
-    // Start is called before the first frame update
+
+    private TextUpdate UI;
+
     void Start()
     {
+        UI = GameObject.FindObjectOfType<TextUpdate>();
+        UI.Write("Phase", 1);
         //Starts our Health Bar off properly by scaling the values to the first phase health.
         HealthBar = HealthBar.GetComponent<Slider>();
         HealthBar.maxValue = HP[Phase];
@@ -44,6 +48,7 @@ public class BossHealthScript : MonoBehaviour
     {
         // Increment the Phase, then if we've run out of phases, die and take the Boss Health bar with us.
         Phase++;
+        UI.Write("Phase", Phase +1);
         if (Phase == HP.Length)
         {
             Destroy(gameObject);

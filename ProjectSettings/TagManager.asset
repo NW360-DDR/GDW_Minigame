@@ -8,6 +8,9 @@ TagManager:
   - Boss
   - PlayerBullet
   - Add
+  - Bullet
+  - Graze
+  - Enemy
   layers:
   - Default
   - TransparentFX

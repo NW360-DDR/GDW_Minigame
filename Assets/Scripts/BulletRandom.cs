@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 /*
 
-BulletRandom - A script for the Bullet prefab which is used in MOST enemies. 
+BulletRandom - A script for the RandomBullet prefab.
+Rotates the bullet by up to 10 degrees in either direction along the y axis, then the Bullet's main movement script takes the wheel.
 
 By: Nathaniel Owens
 */

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseEnemyHealth : MonoBehaviour
+public class EnemyHealth : MonoBehaviour
 {
     // A variable to check if we died by the player's hand.
     private bool byPlayerHand = false;
@@ -39,7 +39,7 @@ public class BaseEnemyHealth : MonoBehaviour
     {
         if (byPlayerHand)
         {
-            UI.Write("Score", "50");
+            UI.Write("Score", 50);
         }
         
     }

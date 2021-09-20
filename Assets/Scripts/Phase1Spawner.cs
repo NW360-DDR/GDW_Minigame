@@ -5,15 +5,14 @@ using UnityEngine;
 public class Phase1Spawner : MonoBehaviour
 {
     public GameObject Prefab;
-    public BossHealthScript Boss;
+    public BossHealth Boss;
 
     public int[] SpawnLocations;
 
     // Generate our first phase enemies. Since, you know, we kinda need them.
     void Start()
     {
-        Boss = Boss.GetComponent<BossHealthScript>();
-        Debug.Log(Boss.Phase);
+        Boss = Boss.GetComponent<BossHealth>();
         foreach(int meme in SpawnLocations)
         {
             Instantiate(Prefab, new Vector3(meme, 0, 4), Prefab.transform.rotation);
@@ -26,7 +25,7 @@ public class Phase1Spawner : MonoBehaviour
     {
         if (Boss.Phase == 1)
         {
-            foreach (GameObject Adds in GameObject.FindGameObjectsWithTag("Add"))
+            foreach (GameObject Adds in GameObject.FindGameObjectsWithTag("Enemy"))
             {
                 Destroy(Adds);
             }

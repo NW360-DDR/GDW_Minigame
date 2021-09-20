@@ -16,16 +16,10 @@ public class PlayerController : MonoBehaviour
     //These are needed for limiting player movement.
     public float XLim = 4.5f;
     public float ZLim = 4.5f;
-    
-    // This is to access the TextUpdate script.
-    private TextUpdate UI;
 
     // Start is called before the first frame update
     void Start()
     {
-        // Actually nabs the specific object script and writes a test value to the difficulty.
-        UI = GameObject.FindObjectOfType<TextUpdate>();
-        UI.Write("Phase","PHASE 1");
         // Properly starts up the Cooldown.
         Cooldown = BulletRate;
     }

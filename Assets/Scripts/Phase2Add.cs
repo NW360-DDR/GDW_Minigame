@@ -7,16 +7,30 @@ using UnityEngine;
 public class Phase2Add : MonoBehaviour
 {
 
-    public GameObject player;
-    // Start is called before the first frame update
-    void Start()
-    {
-        player = GameObject.Find("Player");
-    }
+    // Because this enemy only cares about moving back and forth and generating homing Bullets, the only things we need are Speed and a way to tell which way we should be going.
+    private bool GoingUp = false;
+    private float speed = 2.0f;
 
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(player.transform.position);
+        // Alternating Movement.
+        if (GoingUp)
+        {
+            transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        }
+        else
+        {
+            transform.Translate(Vector3.back * speed * Time.deltaTime);
+        }
+        //When we should alternate.
+        if (transform.position.z >= 4.0f)
+        {
+            GoingUp = false;
+        }
+        if (transform.position.z <= -4)
+        {
+            GoingUp = true;
+        }
     }
 }
