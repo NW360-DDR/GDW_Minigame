@@ -53,6 +53,7 @@ public class BossHealth: MonoBehaviour
         {
             Destroy(gameObject);
             Destroy(GameObject.Find("BossHealth"));
+            UI.Winner();
         }
         // If that still wasn't our final form, though, update the Health bar with the new maxHealth value. Sorry Frieza.
         else

@@ -10,7 +10,7 @@ public class EnemyHealth : MonoBehaviour
     // This is to access the TextUpdate script.
     private TextUpdate UI;
 
-    private int HP = 100;
+    public int HP = 100;
     // Start is called before the first frame update
     void Start()
     {
